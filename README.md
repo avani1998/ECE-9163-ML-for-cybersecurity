@@ -1,9 +1,7 @@
 # Backdoor Attacks Report
-------------------------------------
 Name: Avani Vaishnav  
 NetID: av3141
 
-------------------------------------
 ## Table of Contents
 - [Introduction](#Introduction)
 - [Methodology](#Methodology)
