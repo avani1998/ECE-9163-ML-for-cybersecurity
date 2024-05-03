@@ -10,7 +10,7 @@ NetID: av3141
 - [Installation](#installation)
 
 ### Introduction
-BadNets or backdoored netweorks are malicious networks that have a state-of-teh art perfomrance on the clean training and validaton set but behave badly on the attack's chosen trainign and validation samples. In this assignemnt we use pruning defense on a maliciously trained model to prune nodes that are only activated when malicious data is input into the netwok. 
+BadNets or backdoored netweorks are malicious networks that have a state-of-the art perfomrance on the clean training and validaton set but behave badly on the attack's chosen trainign and validation samples. In this assignemnt we use pruning defense on a maliciously trained model to prune nodes that are only activated when malicious data is input into the netwok. 
 
 ### Methodology
 The general idea is to prune the neural network and compare its performance with the original network to detect any discrepancies caused by the presence of a backdoor. We recall that backdoors activated unues/spare neurons in the network.
