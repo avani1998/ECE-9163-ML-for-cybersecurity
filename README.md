@@ -1,4 +1,4 @@
-# Backdoor Attacks Report
+# Backdoor Attacks in Neural Networks: Pruning Defenses Explored
 
 ## Table of Contents
 - [Introduction](#Introduction)
