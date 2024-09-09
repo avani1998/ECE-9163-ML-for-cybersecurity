@@ -1,6 +1,4 @@
 # Backdoor Attacks Report
-Name: Avani Vaishnav  
-NetID: av3141
 
 ## Table of Contents
 - [Introduction](#Introduction)
@@ -10,17 +8,17 @@ NetID: av3141
 - [Installation](#installation)
 
 ### Introduction
-BadNets or backdoored netweorks are malicious networks that have a state-of-the art perfomrance on the clean training and validaton set but behave badly on the attack's chosen trainign and validation samples. In this assignemnt we use pruning defense on a maliciously trained model to prune nodes that are only activated when malicious data is input into the netwok. 
+Backdoor attacks, especially through malicious networks like BadNets, have always intrigued me due to their potential to compromise even state-of-the-art models. These networks perform exceptionally well on clean training and validation sets but can be manipulated to behave maliciously on targeted data. This project was born out of my desire to dive deeper into adversarial attacks and defenses in neural networks. I decided to focus on pruning defenses to explore how effectively we can mitigate such threats by pruning nodes that activate only in the presence of malicious data. 
 
 ### Methodology
-The general idea is to prune the neural network and compare its performance with the original network to detect any discrepancies caused by the presence of a backdoor. We recall that backdoors activated unues/spare neurons in the network.
+The general idea is to prune the neural network and compare its performance with the original network to detect any discrepancies caused by the presence of a backdoor. We recall that backdoors activated unused/spare neurons in the network.
 
 The pruning defense works as follows: the defender exercises the DNN received from the attacker with clean inputs from the validation dataset, Dvalid, and records the average activation of each neuron. The defender then iteratively prunes neurons from the DNN in increasing order of average activations and records the accuracy of the pruned network in each iteration. The defense terminates when the accuracy on the validation dataset drops below a pre-determined threshold.
 
 We prune neurons from the ```'pool_3'``` layer, before the```FC``` layers. We use the **weights pruning** method where pruning is perfrmed by setting the weights and bias of that channel to 0. 
 
 ### Observations
-As per the instructions we need to save the model when the accuracy drops below X% ={2,4,10}. The models saved for these accuracy drops are ```model_X=2.h5```,```model_X=4.h5``` and ```model_X=10.h5``` respectively. 
+To evaluate the effectiveness of the pruning defense, we save the model when the accuracy drops below X% ={2,4,10}. The models saved for these accuracy drops are ```model_X=2.h5```,```model_X=4.h5``` and ```model_X=10.h5``` respectively. 
 
 The accuracies of the model on clean data and the attack success rates of the model on malicious data are recorded. The  accuracy on clean test data and the attack success rate (on backdoored test data) as a function of the fraction of channels pruned (X) is clearly visualized in this graph. 
 
